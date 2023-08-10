@@ -24,7 +24,7 @@ LANGCHAIN_TRACING = tracing_enabled(True)
 load_dotenv(find_dotenv())
 anthropic.api_key = os.getenv("ANTHROPIC_API_KEY")
 
-os.environ["SERPAPI_API_KEY"] = "0e54b7e6be59703acd6e30056984a57b38124707e987016a9998b5b0c166f571"
+serpapi_api_key = os.environ.get('SERPAPI_API_KEY')
 
 # Initialize SQLite cache
 langchain.llm_cache = SQLiteCache(database_path=".langchain.db")
